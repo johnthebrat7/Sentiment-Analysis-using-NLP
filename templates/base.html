@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis App</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <!-- Centered Title at Top -->
+    <div class="nav-brand">
+        <h1>✨ Sentiment Analyzer ✨</h1>
+    </div>
+    
+    <!-- Navigation Links -->
+    <div class="nav-links">
+        <a href="/" class="nav-link">
+            <span class="link-icon">🏠</span>
+            <span class="link-text">Home</span>
+        </a>
+        <a href="/about" class="nav-link">
+            <span class="link-icon">ℹ️</span>
+            <span class="link-text">About</span>
+        </a>
+    </div>
+</nav>
+
+<!-- Flash Messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-container">
+            {% for category, msg in messages %}
+                <div class="alert alert-{{ category }}">
+                    <span class="alert-icon">
+                        {% if category == 'error' %}❌
+                        {% elif category == 'warning' %}⚠️
+                        {% elif category == 'success' %}✅
+                        {% else %}ℹ️
+                        {% endif %}
+                    </span>
+                    <span class="alert-text">{{ msg }}</span>
+                    <button class="alert-close" onclick="this.parentElement.remove()">×</button>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+
+<!-- Main Content Area -->
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<!-- Footer - Centered at Bottom -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-icon">🤖</div>
+        <p class="footer-text">ML Sentiment Analysis App</p>
+        <div class="footer-decoration">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="hero-section">
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <div class="card-icon">💬</div>
+            <h3>Enter Text for Sentiment Analysis</h3>
+            <p class="card-subtitle">Discover the emotion behind your words</p>
+        </div>
+        
+        <form method="POST" action="/predict" class="analysis-form">
+            <div class="textarea-wrapper">
+                <textarea 
+                    name="text" 
+                    required 
+                    placeholder="Type a review, comment, or any sentence..."
+                    rows="5"
+                    minlength="3"
+                ></textarea>
+            </div>
+            
+            <button type="submit" class="analyze-btn">
+                <span class="btn-text">🔍 Analyze Sentiment</span>
+                <span class="btn-hover-text">Let's Go! 🚀</span>
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

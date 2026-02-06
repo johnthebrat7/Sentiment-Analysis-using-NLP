@@ -1,0 +1,11 @@
+{
+  "model_name": "Sentiment Analysis NLP Model",
+  "version": "1.0.0",
+  "model_type": "Text Classification",
+  "labels": ["Negative", "Neutral", "Positive"],
+  "vectorizer": "TF-IDF",
+  "algorithm": "Logistic Regression",
+  "accuracy": 0.87,
+  "trained_on": "2026-01-15",
+  "author": "Your Name"
+}

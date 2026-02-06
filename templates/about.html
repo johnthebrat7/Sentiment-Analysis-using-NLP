@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="hero-section">
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <div class="card about-card">
+        <div class="card-header">
+            <div class="card-icon about-icon">🧠</div>
+            <h3>About This App</h3>
+            <p class="card-subtitle">Powered by Machine Learning</p>
+        </div>
+        
+        <div class="about-content">
+            <div class="about-item">
+                <div class="about-icon-wrapper">
+                    <span>🤖</span>
+                </div>
+                <div class="about-text">
+                    <h4>NLP Sentiment Analysis</h4>
+                    <p>Advanced Natural Language Processing to understand emotions in text</p>
+                </div>
+            </div>
+            
+            <div class="about-item">
+                <div class="about-icon-wrapper">
+                    <span>⚡</span>
+                </div>
+                <div class="about-text">
+                    <h4>Real-Time Analysis</h4>
+                    <p>Get instant results with our powerful ML model</p>
+                </div>
+            </div>
+            
+            <div class="about-item">
+                <div class="about-icon-wrapper">
+                    <span>🎯</span>
+                </div>
+                <div class="about-text">
+                    <h4>High Accuracy</h4>
+                    <p>Trained on thousands of samples for reliable predictions</p>
+                </div>
+            </div>
+        </div>
+        
+        <a href="/" class="btn home-btn">
+            <span class="btn-text">🏠 Go Home</span>
+            <span class="btn-hover-text">Let's Analyze! 🚀</span>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

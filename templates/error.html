@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="hero-section">
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <div class="card error-card">
+        <div class="card-header">
+            <div class="card-icon error-icon">⚠️</div>
+            <h3>Oops! Something Went Wrong</h3>
+            <p class="card-subtitle">Don't worry, we've got you covered</p>
+        </div>
+        
+        <div class="error-content">
+            <div class="error-message">
+                <p>{{ error }}</p>
+            </div>
+        </div>
+        
+        <a href="/" class="btn home-btn">
+            <span class="btn-text">🏠 Go Home</span>
+            <span class="btn-hover-text">Try Again! 💪</span>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
